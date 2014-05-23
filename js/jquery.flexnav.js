@@ -47,7 +47,8 @@
 		 breakpoint = settings.breakpoint;
 	 }
     showMenu = function() {
-      if ($nav.hasClass('lg-screen') === true && settings.hover === true) {
+      if ($(this).closest('.lg-screen').size() && settings.hover === true) {
+			console.log('here');
         if (settings.transitionOpacity === true) {
           return $(this).find('>ul').addClass('flexnav-show').stop(true, true).animate({
             height: ["show", "swing"],
@@ -61,7 +62,7 @@
       }
     };
     resetMenu = function() {
-      if ($nav.hasClass('lg-screen') === true && $(this).find('>ul').hasClass('flexnav-show') === true && settings.hover === true) {
+      if ($(this).closest('.lg-screen').size() && $(this).find('>ul').hasClass('flexnav-show') === true && settings.hover === true) {
         if (settings.transitionOpacity === true) {
           return $(this).find('>ul').removeClass('flexnav-show').stop(true, true).animate({
             height: ["hide", "swing"],
