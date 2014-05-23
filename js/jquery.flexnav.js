@@ -1,5 +1,5 @@
 /*
-	FlexNav.js 1.3.3
+	FlexNav.js 1.3.4
 
 	Created by Jason Weaver http://jasonweaver.name
 	Released under http://unlicense.org/
@@ -50,12 +50,12 @@
       if ($nav.hasClass('lg-screen') === true && settings.hover === true) {
         if (settings.transitionOpacity === true) {
           return $(this).find('>ul').addClass('flexnav-show').stop(true, true).animate({
-            height: ["toggle", "swing"],
-            opacity: "toggle"
+            height: ["show", "swing"],
+            opacity: "show"
           }, settings.animationSpeed);
         } else {
           return $(this).find('>ul').addClass('flexnav-show').stop(true, true).animate({
-            height: ["toggle", "swing"]
+            height: ["show", "swing"]
           }, settings.animationSpeed);
         }
       }
@@ -64,12 +64,12 @@
       if ($nav.hasClass('lg-screen') === true && $(this).find('>ul').hasClass('flexnav-show') === true && settings.hover === true) {
         if (settings.transitionOpacity === true) {
           return $(this).find('>ul').removeClass('flexnav-show').stop(true, true).animate({
-            height: ["toggle", "swing"],
-            opacity: "toggle"
+            height: ["hide", "swing"],
+            opacity: "hide"
           }, settings.animationSpeed);
         } else {
           return $(this).find('>ul').removeClass('flexnav-show').stop(true, true).animate({
-            height: ["toggle", "swing"]
+            height: ["hide", "swing"]
           }, settings.animationSpeed);
         }
       }
